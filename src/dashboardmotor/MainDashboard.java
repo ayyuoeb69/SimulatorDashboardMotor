@@ -15,10 +15,9 @@ import javax.swing.*;
  *
  * @author fa
  */
-public class DashboardLayout extends javax.swing.JFrame {
+public class MainDashboard extends javax.swing.JFrame {
 
-    int Gear = 0, max;
-    int rpm;
+    int Gear = 0, max, rpm;
     Timer gasPlus = new Timer(90, new ActionListener() {   
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -34,7 +33,7 @@ public class DashboardLayout extends javax.swing.JFrame {
                 up++;
             }
             
-            rpm = up / max * 100;
+            rpm = up / max * 1000;
             
             txfRpm.setText(String.valueOf(rpm));
             txfSpeed.setText(String.valueOf(up));
@@ -49,7 +48,7 @@ public class DashboardLayout extends javax.swing.JFrame {
                 up--;
             }  
             
-            rpm = up / max * 100;
+            rpm = up / max * 1000;
             
             txfRpm.setText(String.valueOf(rpm));
             txfSpeed.setText(String.valueOf(up));
@@ -64,14 +63,14 @@ public class DashboardLayout extends javax.swing.JFrame {
                 up--;
             }     
             
-            rpm = up / max * 100;
+            rpm = up / max * 1000;
             
             txfRpm.setText(String.valueOf(rpm));
             txfSpeed.setText(String.valueOf(up));
         }
     });
     
-    public DashboardLayout() {
+    public MainDashboard() {
         initComponents();
     }
 
@@ -210,14 +209,14 @@ public class DashboardLayout extends javax.swing.JFrame {
                                         .addComponent(txfGear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 17, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(164, 164, 164)
-                                .addComponent(txfRpm, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(144, 144, 144)
+                                .addComponent(txfRpm, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
-                        .addGap(37, 37, 37))))
+                        .addGap(39, 39, 39))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,20 +350,21 @@ public class DashboardLayout extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DashboardLayout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DashboardLayout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DashboardLayout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DashboardLayout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DashboardLayout().setVisible(true);
+                new MainDashboard().setVisible(true);
         
             }
         });
